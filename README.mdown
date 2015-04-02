@@ -7,3 +7,21 @@ Read all my amazing posts!!!!! You can load them into the app with: `rake load:b
 Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
 
 I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+
+## Performance
+
+For some reason, I could not get MiniProfiler to actually appear on my page, so I just measured times based on what Chrome's Inspector told me in the Network tab.
+
+On my local machine, straight out of the box, the page took an average of 1.7 minutes to load.
+Just eager-loading comments usually took 40-50 seconds.
+Eager-loading both comments and replies dropped it down to 12-16 seconds!
+
+Enabling fragment-caching on posts had some interesting results. The first page load took about 20 seconds. Each subsequent page load was 4-7 seconds.
+
+Once I enabled fragment-caching on posts, comments, and replies, the times dropped even further. The first load took about 10 seconds, but each subsequent load was consistently 3-5 seconds.
+
+On Heroku, eager-loading comments and replies were between 15-20 seconds. Once I pushed the caching changes, the first load took 25 seconds or so, but after that it was 2-5 seconds.
+
+LoadImpact showed some pretty good results...until Heroku started timing out. Oh well. This could be mitigated by switching the server to Puma or Unicorn.
+
+![LoadImpact Test Results](https://dl.dropboxusercontent.com/u/169149/Screen%20Shot%202015-04-02%20at%201.34.21%20PM.png) - [link](https://app.loadimpact.com/load-test/090bb2f2-eefb-4178-911c-34eea2487bd5)
