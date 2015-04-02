@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("id").includes(comments: [:replies])
+    @posts = Post.includes(comments: :replies)
 
     respond_to do |format|
       format.html # index.html.erb
