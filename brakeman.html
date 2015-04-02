@@ -168,8 +168,8 @@ p {
     <td>3.2.19</td>
     <td>3.0.2
     <td>
-      2015-04-02 15:50:32 -0700<br><br>
-      0.557375 seconds
+      2015-04-02 15:52:20 -0700<br><br>
+      0.492282 seconds
     </td>
     <td>BasicAuth, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NumberToCurrency, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing</td>
   </tr>
@@ -199,7 +199,7 @@ p {
   </tr>
   <tr>
     <td>Security Warnings</td>
-    <td>2 <span class='high-confidence'>(1)</span></td>
+    <td>1 <span class='high-confidence'>(0)</span></td>
   </tr>
   
   <tr>
@@ -220,72 +220,8 @@ p {
     <td>1</td>
   </tr>
   
-  <tr>
-    <td>Session Setting</td>
-    <td>1</td>
-  </tr>
-  
 </table>
 <br>
-<h2>Security Warnings</h2>  
-<table>
-  <tr>
-    <th>Confidence</th>
-    <th>Class</th>
-    <th>Method</th>
-    <th>Warning Type</th>
-    <th>Message</th>
-  </tr>
-  
-  <tr>
-    <td><span class='high-confidence'>High</span></td>
-    <td></td>
-    <td></td>
-    <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/session_setting/">Session Setting</a></td>
-    <td><div class='warning_message' onClick="toggle('context1');toggle('message1');toggle('full_message1')" >Session secret should not be included in version control near line 7<table id='context1' class='context' style='display:none'><caption>config/initializers/secret_token.rb</caption>        <tr class='context first'>
-          <td class='context_line'>
-            <pre class='context'>3</pre>
-          </td>
-          <td class='context'>
-            <pre class='context'># Your secret key for verifying the integrity of signed cookies.</pre>
-          </td>
-        </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>4</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'># If you change this key, all old signed cookies will become invalid!</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>5</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'># Make sure the secret is at least 30 characters and all random,</pre>
-            </td>
-          </tr>
-          <tr class='context alt near_error'>
-            <td class='context_line'>
-              <pre class='context'>6</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'># no regular words or you&#39;ll be exposed to dictionary attacks.</pre>
-            </td>
-          </tr>
-          <tr class='context error'>
-            <td class='context_line'>
-              <pre class='context'>7</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>IvanTheTerriblesBlog::Application.config.secret_token = &#39;8101480f283e383e22fb5331faa54551140038a6ded1059d8168fdfddbd7704ca409a0d53c6d2696afbc8d7c147285be48678620084d38f21bf114f34483dae8&#39;</pre>
-            </td>
-          </tr>
-</table></div></td>
-  </tr>
-  
-</table>
 <p>View Warnings</p>
 <table>
   <tr>
@@ -303,7 +239,7 @@ p {
       
     </td>
     <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/dynamic_render_path/">Dynamic Render Path</a></td>
-    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Render path contains parameter value near line 4: render(action =&gt; Post.where(:published =&gt; ((params[...</span><span id='full_message2' style='display:none'>Render path contains parameter value near line 4: render(action =&gt; Post.where(:published =&gt; ((params[:status] == &quot;published&quot;))).search(params[:search]).page(<span class="user_input">params[:page]</span>).per(15), {})</span><table id='context2' class='context' style='display:none'><caption>app/views/posts/index.html.erb</caption>        <tr class='context first'>
+    <td><div class='warning_message' onClick="toggle('context1');toggle('message1');toggle('full_message1')" ><span id='message1' style='display:block' >Render path contains parameter value near line 4: render(action =&gt; Post.where(:published =&gt; ((params[...</span><span id='full_message1' style='display:none'>Render path contains parameter value near line 4: render(action =&gt; Post.where(:published =&gt; ((params[:status] == &quot;published&quot;))).search(params[:search]).page(<span class="user_input">params[:page]</span>).per(15), {})</span><table id='context1' class='context' style='display:none'><caption>app/views/posts/index.html.erb</caption>        <tr class='context first'>
           <td class='context_line'>
             <pre class='context'>1</pre>
           </td>
