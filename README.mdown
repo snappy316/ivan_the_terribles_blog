@@ -19,3 +19,9 @@ Eager-loading both comments and replies dropped it down to 12-16 seconds!
 Enabling fragment-caching on posts had some interesting results. The first page load took about 20 seconds. Each subsequent page load was 4-7 seconds.
 
 Once I enabled fragment-caching on posts, comments, and replies, the times dropped even further. The first load took about 10 seconds, but each subsequent load was consistently 3-5 seconds.
+
+On Heroku, eager-loading comments and replies were between 15-20 seconds. Once I pushed the caching changes, the first load took 25 seconds or so, but after that it was 2-5 seconds.
+
+LoadImpact showed some pretty good results...until Heroku started timing out. Oh well. This could be mitigated by switching the server to Puma or Unicorn.
+
+![LoadImpact Test Results](https://dl.dropboxusercontent.com/u/169149/Screen%20Shot%202015-04-02%20at%201.34.21%20PM.png)
