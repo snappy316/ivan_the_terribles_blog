@@ -1,6 +1,8 @@
-<section class="post">
-  <h2>Post <%= "#{post.id}: #{post.title}" %></h2>
-  <div class="post"><%= post.body %></div>
-  <%= render 'post_nav', post: post %>
-  <%= render post.comments %>
-</section>
+<% cache "post-#{post.id}-#{post.updated_at}" do %>
+  <section class="post">
+    <h2>Post <%= "#{post.id}: #{post.title}" %></h2>
+    <div class="post"><%= post.body %></div>
+    <%= render 'post_nav', post: post %>
+    <%= render post.comments %>
+  </section>
+<% end %>

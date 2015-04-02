@@ -10,6 +10,12 @@ I know it is a little slow (but totes worth it!!!!)... _Do you know how I can ma
 
 ## Performance
 
+For some reason, I could not get MiniProfiler to actually appear on my page, so I just measured times based on what Chrome's Inspector told me in the Network tab.
+
 On my local machine, straight out of the box, the page took an average of 1.7 minutes to load.
 Just eager-loading comments usually took 40-50 seconds.
 Eager-loading both comments and replies dropped it down to 12-16 seconds!
+
+Enabling fragment-caching on posts had some interesting results. The first page load took about 20 seconds. Each subsequent page load was 4-7 seconds.
+
+Once I enabled fragment-caching on posts, comments, and replies, the times dropped even further. The first load took about 10 seconds, but each subsequent load was consistently 3-5 seconds.

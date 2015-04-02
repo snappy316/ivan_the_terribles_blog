@@ -1,2 +1,4 @@
-<h4>Reply <%= reply.id %>:</h4>
-<p><%= reply.body %></p>
+<% cache "reply-#{reply.id}-#{reply.updated_at}" do %>
+  <h4>Reply <%= reply.id %>:</h4>
+  <p><%= reply.body %></p>
+<% end %>
